@@ -11,19 +11,29 @@
       "completed": false
     },
     {
-      "text": "????",
-      "completed": true,
+      "text": "I did it",
+      "completed": false,
       "id": 3
     },
     {
-      "text": "Profit",
+      "text": "hello",
       "completed": false,
       "id": 4
     },
     {
-      "text": "Profit",
+      "text": "hi",
       "completed": false,
       "id": 5
+    },
+    {
+      "text": "sdfsdf",
+      "completed": false,
+      "id": 6
+    },
+    {
+      "text": "ihkjbkhvkhv",
+      "completed": false,
+      "id": 7
     }
   ]
 }
