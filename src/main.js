@@ -1,6 +1,6 @@
 window.onload = init;
 
-
+let todos = [];
 
 function init() {
     getTodos()
@@ -48,7 +48,7 @@ function postTodo(event) {
 
 function updateThirdTodo(event) {
     const updatedTodo = {
-        text: '????',
+        text: '#todo-list',
         completed: true
     };
     const jsonnedTodo = JSON.stringify(updatedTodo);
@@ -58,7 +58,32 @@ function updateThirdTodo(event) {
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.onload = handleData;
     xhr.send(jsonnedTodo);
+
+
+
+    const li = event.target;
+
+    const ol = document.querySelector('#todo-list');
+    const lis = ol.childNodes;
+    let liIndex = -1;
+    
+    for(let i = 0; i < lis.length; i++) {
+        if(lis[i].innerText === li.innerText) {
+            liIndex = i;
+        }
+    }
+
+  
+    if(todos[liIndex]) {
+        li.style.textDecoration = '';
+    } else {
+        li.style.textDecoration = 'line-through';
+    }
+
+    todos[liIndex] = !todos[liIndex];
 }
+
+
 
 function handleData(event) {
    const todoData = JSON.parse(event.target.responseText);
